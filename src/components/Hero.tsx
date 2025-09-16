@@ -1,13 +1,12 @@
-
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
+import { useState, useEffect, useCallback } from 'react';
+import { motion, AnimatePresence, useAnimation, type Variants } from 'framer-motion';
 import styles from './Hero.module.css';
 
 const projects = [
   { id: 1, name: 'Portfolio (TUI)', url: 'https://qtremors.github.io/tremors/indextui.html', icon: '🌆' },
-  { id: 2, name: 'LinkedIn', url: 'www.linkedin.com/in/aman-singh-0a1938301', icon: '🤵' },
+  { id: 2, name: 'LinkedIn', url: 'https://www.linkedin.com/in/aman-singh-0a1938301', icon: '🤵' },
   { id: 3, name: 'Portfolio', url: 'https://qtremors.github.io/tremors/', icon: '🏙️' },
   { id: 4, name: 'Github', url: 'https://github.com/qtremors', icon: '⚙️' },
 ];
@@ -16,8 +15,7 @@ const ORBIT_RADIUS = 150;
 const ORBIT_DURATION = 20;
 const REVEAL_DURATION = 1.5;
 
-
-const orbitSystemVariants = {
+const orbitSystemVariants: Variants = {
   hidden: { scale: 0, opacity: 0 },
   visible: {
     scale: 1,
@@ -38,7 +36,7 @@ const orbitSystemVariants = {
   },
 };
 
-const moonVariants = {
+const moonVariants: Variants = {
   hidden: { opacity: 0, scale: 0, x: 0, y: 0 },
   visible: (i: number) => {
     const finalAngle = (i / projects.length) * 360;
@@ -79,7 +77,7 @@ const Hero = () => {
   const [isActive, setIsActive] = useState(false);
   const rotationControls = useAnimation();
 
-  const startOrbit = () => {
+  const startOrbit = useCallback(() => {
     rotationControls.start({
       rotate: 360,
       transition: {
@@ -88,7 +86,7 @@ const Hero = () => {
         repeat: Infinity,
       },
     });
-  };
+  }, [rotationControls]);
 
   useEffect(() => {
     if (isActive) {
@@ -102,7 +100,7 @@ const Hero = () => {
     } else {
       rotationControls.stop();
     }
-  }, [isActive, rotationControls]);
+  }, [isActive, rotationControls, startOrbit]);
 
   const handlePlanetClick = () => {
     setIsActive((prev) => !prev);

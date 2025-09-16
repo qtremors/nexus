@@ -1,6 +1,6 @@
 // hooks/useOrbitAnimation.ts
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAnimation } from 'framer-motion';
 
 interface AnimationParams {

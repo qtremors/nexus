@@ -1,4 +1,3 @@
-// components/StarsBackground.tsx
 
 'use client';
 

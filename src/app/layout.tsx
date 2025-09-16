@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StarsBackground from "@/components/StarsBackground";
-import BlackholeBackground from "@/components/BlackholeBackground"; // 1. Import new component
+import BlackholeBackground from "@/components/BlackholeBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StarsBackground />
-        <BlackholeBackground /> {/* 2. Add component here */}
+        <BlackholeBackground />
         {children}
       </body>
     </html>

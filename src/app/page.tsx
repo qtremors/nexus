@@ -1,13 +1,12 @@
-// app/page.tsx
 
 import Hero from "@/components/Hero";
-import About from "@/components/About"
+import Voyager from "@/components/Voyager"; 
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <About />
+      <Voyager/>
     </main>
   );
 }

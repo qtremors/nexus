@@ -1,8 +1,13 @@
-/* app/globals.css */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  height: 100%;
+  overflow: hidden;
+}
 
 body {
   background-color: #030014; 

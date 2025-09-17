@@ -6,7 +6,7 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  z-index: -1;
+  z-index: 10;
   pointer-events: none;
 }
 
@@ -70,8 +70,6 @@
   left: 50%;
   transform: translateX(-50%);
   padding: 5px 10px;
-  background-color: rgba(25, 25, 25, 0.8);
-  border: 1px solid rgba(150, 200, 255, 0.5);
   border-radius: 5px;
   color: white;
   white-space: nowrap;
@@ -88,4 +86,9 @@
 .voyagerShip:hover .shipTooltip {
   opacity: 1;
   visibility: visible;
+}
+
+.shipIcon {
+  filter: drop-shadow(0 0 5px rgba(150, 200, 255, 0.8));
+  display: flex; 
 }

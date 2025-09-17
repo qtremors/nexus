@@ -39,11 +39,11 @@ const StarsBackground = () => {
           opacity: 0,
           position: {
             x: 50,
-            y: 1,
+            y: 0,
           },
           size: {
-            value: 250,
-            limit:250,
+            value: 225,
+            limit:225,
           },
         },
       ],

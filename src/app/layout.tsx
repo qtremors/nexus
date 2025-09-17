@@ -5,6 +5,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StarsBackground from "@/components/StarsBackground";
 import BlackholeBackground from "@/components/BlackholeBackground";
+import Blackhole2Background from "@/components/Blackhole2Background";
+import PlanetBackground from "@/components/PlanetBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +35,8 @@ export default function RootLayout({
       >
         <StarsBackground />
         <BlackholeBackground />
+        <Blackhole2Background/>
+        {/* <PlanetBackground/> */}
         {children}
       </body>
     </html>

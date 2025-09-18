@@ -1,4 +1,3 @@
-// // components/BlackholeBackground.tsx
 
 import styles from './PlanetBackground.module.css';
 
@@ -7,7 +6,7 @@ const PlanetBackground = () => {
     <>
       <div className={styles.overlay}></div>
       <img
-        src="/sunpurple.png"
+        src="/Surface.webp"
         alt="Planet background"
         className={styles.imageBg}
       />

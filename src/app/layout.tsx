@@ -35,8 +35,8 @@ export default function RootLayout({
       >
         <StarsBackground />
         <BlackholeBackground />
-        <Blackhole2Background/>
-        {/* <PlanetBackground/> */}
+        {/* <Blackhole2Background/> */}
+        <PlanetBackground/>
         {children}
       </body>
     </html>

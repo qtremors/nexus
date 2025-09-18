@@ -1,4 +1,3 @@
-// components/BlackholeBackground.tsx
 
 import styles from './BlackholeBackground.module.css';
 

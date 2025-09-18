@@ -1,5 +1,3 @@
-// components/Blackhole2Background.tsx
-
 import styles from './Blackhole2Background.module.css';
 
 const Blackhole2Background = () => {

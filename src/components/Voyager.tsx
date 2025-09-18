@@ -8,7 +8,7 @@ const Voyager = () => {
         <div className={styles.voyagerShip}>
           <div className={styles.shipIcon}>
             <Image
-              src="/voyager1.png"
+              src="/moon1.png"
               alt="Voyager 1 space probe"
               width={50}
               height={50}

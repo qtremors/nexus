@@ -8,13 +8,13 @@ const Voyager = () => {
         <div className={styles.voyagerShip}>
           <div className={styles.shipIcon}>
             <Image
-              src="/moon1.png"
-              alt="Voyager 1 space probe"
+              src="/voyager.png"
+              alt="Voyager"
               width={50}
               height={50}
             />
           </div>
-          <div className={styles.shipTooltip}>For Fun</div>
+          <div className={styles.shipTooltip}>👾</div>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ const PlanetBackground = () => {
     <>
       <div className={styles.overlay}></div>
       <img
-        src="/Surface.webp"
+        src="/moon.png"
         alt="Planet background"
         className={styles.imageBg}
       />

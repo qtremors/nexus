@@ -7,8 +7,8 @@ This project is a creative landing page built with Next.js, designed to showcase
 ### 🖼️ Screenshots
 
 | Home Page |
-|:---:|
-| ![Home Page](public/void.png) |
+|:---:| :---: |
+| ![Home Page](public/home.png) | ![Projects Page](public/projects.png) |
 
 ---
 

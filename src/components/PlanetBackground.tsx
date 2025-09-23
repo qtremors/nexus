@@ -1,15 +1,21 @@
-
+import Image from 'next/image';
 import styles from './PlanetBackground.module.css';
 
 const PlanetBackground = () => {
   return (
     <>
       <div className={styles.overlay}></div>
-      <img
-        src="/moon.png"
-        alt="Planet background"
-        className={styles.imageBg}
-      />
+      <div className={styles.imageContainer}>
+        <Image
+          src="/moon.png"
+          alt="Planet background"
+          fill
+          sizes="100vw"
+          priority
+          className={styles.imageBg}
+          unoptimized
+        />
+      </div>
     </>
   );
 };

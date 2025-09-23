@@ -1,13 +1,15 @@
-
-.imageBg {
+.imageContainer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -7;
+}
+
+.imageBg {
   object-fit: cover;
   object-position: bottom center;
-  z-index: -7;
   transform: scale(1.3) translateY(40%);
   filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
 }

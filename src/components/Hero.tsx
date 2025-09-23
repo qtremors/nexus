@@ -1,8 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import styles from './Hero.module.css';
+import BlackholeBackground from './BlackholeBackground';
+import PlanetBackground from './PlanetBackground';
 
 const spaceships = [
   { id: 1, name: 'Github', url: 'https://github.com/qtremors', image: '/ship2.png' },
@@ -67,6 +71,8 @@ const Hero = () => {
 
   return (
     <section className={styles.heroContainer}>
+      <BlackholeBackground />
+      <PlanetBackground />
       <div className={styles.stationSystem}>
         <motion.button
           className={styles.spaceStation}
@@ -75,7 +81,13 @@ const Hero = () => {
           whileTap={{ scale: 0.95 }}
           aria-label="Toggle spaceships"
         >
-          <img src="/spacestation.png" alt="Space Station" />
+          <Image
+            src="/spacestation.png"
+            alt="Space Station"
+            fill
+            sizes="150px"
+            priority
+          />
         </motion.button>
 
         <div className={styles.spaceshipContainer}>
@@ -96,12 +108,40 @@ const Hero = () => {
                   exit="exit"
                   whileHover={{ scale: 1.15, y: -10 }}
                 >
-                  <img src={ship.image} alt={ship.name} />
+                  <Image src={ship.image} alt={ship.name} fill sizes="80px" />
                 </motion.a>
               ))}
           </AnimatePresence>
         </div>
       </div>
+
+       <Link href="/projects" className={styles.wormholeLink} aria-label="Navigate to projects page">
+        <motion.div
+          className={styles.wormholeImageContainer}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            opacity: { delay: 0.8, duration: 1 },
+            scale: { delay: 0.8, duration: 1 },
+          }}
+          whileHover={{
+            scale: 1.15,
+            transition: { duration: 0.3 },
+          }}
+        >
+            <Image
+                src="/wormhole.png"
+                alt="Navigate to projects"
+                className={styles.wormholeImage}
+                fill
+                sizes="100px"
+            />
+        </motion.div>
+        <span className={styles.wormholeText}></span>
+      </Link>
     </section>
   );
 };

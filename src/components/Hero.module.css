@@ -19,6 +19,7 @@
 }
 
 .spaceStation {
+  position: relative;
   width: 100px;
   height: 100px;
   scale: 1.5;
@@ -27,14 +28,11 @@
   cursor: pointer;
   z-index: 3;
   padding: 0;
-}
-
-.spaceStation img {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 5px rgba(1, 0, 161, 0.5));
+  filter: drop-shadow(0 0 5px rgba(128, 0, 255, 0.5));
 
 }
+
+
 
 .spaceshipContainer {
   width: auto;
@@ -54,10 +52,78 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
-.spaceship img {
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-geist-mono);
+  font-size: 0.875rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.scrollChevron {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.wormholeLink {
+  position: absolute;
+  bottom: 10vh;
+  right: 5vw;
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.wormholeImageContainer {
+  position: relative;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wormholeImage {
+  object-fit: contain;
+  filter: drop-shadow(0 0 15px rgba(173, 158, 255, 0.5));
+  animation: rotate 120s linear infinite;
+}
+
+.wormholeText {
+  position: absolute;
+  font-family: var(--font-geist-mono);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  transition: opacity 0.3s ease, letter-spacing 0.3s ease;
+  opacity: 0;
+}
+
+.wormholeLink:hover .wormholeText {
+  opacity: 1;
+  letter-spacing: 0.2em;
 }

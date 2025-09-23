@@ -1,15 +1,16 @@
+/* src/globals.css */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-  height: 100%;
-  overflow: hidden;
-}
-
 body {
   background-color: #030014; 
   color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }

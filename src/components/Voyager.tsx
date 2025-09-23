@@ -10,8 +10,8 @@ const Voyager = () => {
             <Image
               src="/voyager.png"
               alt="Voyager"
-              width={50}
-              height={50}
+              fill
+              sizes="40px"
             />
           </div>
           <div className={styles.shipTooltip}>👾</div>

@@ -9,10 +9,10 @@ import BlackholeBackground from './BlackholeBackground';
 import PlanetBackground from './PlanetBackground';
 
 const spaceships = [
-  { id: 1, name: 'Github', url: 'https://github.com/qtremors', image: '/ship2.png' },
-  { id: 2, name: 'Portfolio (TUI)', url: 'https://qtremors.github.io/tremors/indextui.html', image: '/ship1.png' },
-  { id: 3, name: 'Portfolio', url: 'https://qtremors.github.io/tremors/', image: '/ship1.png' },
-  { id: 4, name: 'LinkedIn', url: 'https://www.linkedin.com/in/aman-singh-0a1938301', image: '/ship2.png' },
+  { id: 1, name: 'Github', url: 'https://github.com/qtremors', image: '/ship55.png' },
+  { id: 2, name: 'Portfolio (TUI)', url: 'https://qtremors.github.io/tremors/indextui.html', image: '/ship66.png' },
+  { id: 3, name: 'Portfolio', url: 'https://qtremors.github.io/tremors/', image: '/ship66.png' },
+  { id: 4, name: 'LinkedIn', url: 'https://www.linkedin.com/in/aman-singh-0a1938301', image: '/ship55.png' },
 ];
 
 
@@ -82,7 +82,7 @@ const Hero = () => {
           aria-label="Toggle spaceships"
         >
           <Image
-            src="/spacestation.png"
+            src="/spacestation6.png"
             alt="Space Station"
             fill
             sizes="150px"

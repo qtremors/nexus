@@ -22,14 +22,14 @@
   position: relative;
   width: 100px;
   height: 100px;
-  scale: 1.5;
+  scale: 2;
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 3;
   padding: 0;
-  filter: drop-shadow(0 0 5px rgba(128, 0, 255, 0.5));
-
+  /* filter: drop-shadow(0 0 5px rgba(128, 0, 255, 0.5)); */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
 

@@ -28,11 +28,8 @@
   cursor: pointer;
   z-index: 3;
   padding: 0;
-  /* filter: drop-shadow(0 0 5px rgba(128, 0, 255, 0.5)); */
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
-
-
 
 .spaceshipContainer {
   width: auto;
@@ -52,7 +49,47 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  perspective: 1000px;
+}
+
+.fuselage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1.2s;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.front {
+  transform: translateZ(20px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(20px);
+}
+
+.right {
+  background: transparent;
+  width: 40px;
+  transform: rotateY(90deg) translateZ(40px);
+}
+
+
+.left {
+  background: transparent;
+  width: 40px;
+  transform: rotateY(-90deg) translateZ(40px);
 }
 
 
@@ -108,6 +145,7 @@
 
 .wormholeImage {
   object-fit: contain;
+  scale: 0.7;
   filter: drop-shadow(0 0 15px rgba(173, 158, 255, 0.5));
   animation: rotate 120s linear infinite;
 }

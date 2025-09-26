@@ -9,28 +9,24 @@ import BlackholeBackground from './BlackholeBackground';
 import PlanetBackground from './PlanetBackground';
 
 const spaceships = [
-  { id: 1, name: 'Github', url: 'https://github.com/qtremors', image: '/ship55.png' },
-  { id: 2, name: 'Portfolio (TUI)', url: 'https://qtremors.github.io/tremors/indextui.html', image: '/ship66.png' },
-  { id: 3, name: 'Portfolio', url: 'https://qtremors.github.io/tremors/', image: '/ship66.png' },
-  { id: 4, name: 'LinkedIn', url: 'https://www.linkedin.com/in/aman-singh-0a1938301', image: '/ship55.png' },
+  { id: 1, name: 'Github', url: 'https://github.com/qtremors', image: '/ship55.png', imageBack: '/ship55-rev.png' },
+  { id: 2, name: 'Portfolio (TUI)', url: 'https://qtremors.github.io/tremors/indextui.html', image: '/ship66.png', imageBack: '/ship66-rev.png' },
+  { id: 3, name: 'Portfolio', url: 'https://qtremors.github.io/tremors/', image: '/ship66.png', imageBack: '/ship66-rev.png' },
+  { id: 4, name: 'LinkedIn', url: 'https://www.linkedin.com/in/aman-singh-0a1938301', image: '/ship55.png', imageBack: '/ship55-rev.png' },
 ];
-
-
 
 const REVEAL_DURATION = 1.0;
 const EXIT_DURATION = 1.5;
-const ROTATION_DURATION = 0.4;
+const ROTATION_DURATION = 0.1;
+
 
 const spaceshipVariants: Variants = {
-
   hidden: {
     y: '-50vh',
     x: 0,
     opacity: 0,
     scale: 0.3,
-    rotate: 0,
   },
-
   visible: (i: number) => ({
     y: 0,
     x: (i - (spaceships.length - 1) / 2) * 140,
@@ -42,25 +38,33 @@ const spaceshipVariants: Variants = {
       ease: [0.16, 1, 0.3, 1],
     },
   }),
-
   exit: (i: number) => ({
-    rotate: [null, 180, 180],
-    y: [null, 0, '-45vh'],
-    x: [null, null, 0],
-    opacity: [null, 1, 0],
-    scale: [null, 1, 0.3],
-
+    y: '-45vh',
+    x: 0,
+    opacity: 0,
+    scale: 0.3,
     transition: {
-      duration: EXIT_DURATION + ROTATION_DURATION,
-      
-      delay: (spaceships.length - 1 - i) * 0.5,
-
-      times: [0, ROTATION_DURATION / (EXIT_DURATION + ROTATION_DURATION), 1],
-
-      ease: ['circOut', 'easeIn'],
+      duration: EXIT_DURATION,
+      delay: ROTATION_DURATION + (spaceships.length - 1 - i) * 0.3,
+      ease: 'easeIn',
     },
   }),
 };
+
+
+const fuselageVariants: Variants = {
+  visible: {
+    rotateY: 0,
+  },
+  exit: {
+    rotateY: -180,
+    transition: {
+      duration: ROTATION_DURATION,
+      ease: 'easeInOut',
+    },
+  },
+};
+
 
 const Hero = () => {
   const [isDeployed, setIsDeployed] = useState(false);
@@ -108,7 +112,24 @@ const Hero = () => {
                   exit="exit"
                   whileHover={{ scale: 1.15, y: -10 }}
                 >
-                  <Image src={ship.image} alt={ship.name} fill sizes="80px" />
+
+                  <motion.div
+                    className={styles.fuselage}
+                    variants={fuselageVariants}
+                    initial="visible"
+                    animate="visible"
+                    exit="exit"
+                  >
+
+                    <div className={`${styles.face} ${styles.front}`}>
+                      <Image src={ship.image} alt={ship.name} fill sizes="80px" />
+                    </div>
+                    <div className={`${styles.face} ${styles.back}`}>
+                      <Image src={ship.imageBack} alt={`${ship.name} (rear view)`} fill sizes="80px" />
+                    </div>
+                    <div className={`${styles.face} ${styles.right}`}></div>
+                    <div className={`${styles.face} ${styles.left}`}></div>
+                  </motion.div>
                 </motion.a>
               ))}
           </AnimatePresence>
